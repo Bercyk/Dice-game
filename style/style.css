@@ -1,0 +1,291 @@
+body {
+  font-family: 'Rubik', sans-serif;
+  background-color: rgba(73, 179, 164, 0.616);
+  font-size: 0.9rem;
+  --dotSize: 18px;
+  --dotHorizontalLeft: 25%;
+  --dotHorizontalCenter: 50%;
+  --dotHorizontalRight: 75%;
+  --dotVerticalTop: 25%;
+  --dotVerticalCenter: 50%;
+  --dotVerticalBottom: 75%;
+}
+
+.container {
+  margin: 0 auto;
+  box-shadow: 2px 6px 15px 4px rgba(0,0,0,0.75);
+  width: 400px;
+  height: 400px;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 0.5rem;
+}
+
+.container .container-top{
+  padding: 10px;
+}
+
+h1,
+h2 {
+  margin: 0;
+  text-align: center;
+  line-height: 2.3rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+}
+
+.game-players {
+  display: flex;
+  justify-content: space-around;
+}
+.player {
+  margin: 0;
+  line-height: 1.4rem;
+  font-weight: 500;
+}
+
+.container .container-middle{
+  height: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.scene {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  perspective: 800px;
+}
+.dice {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+}
+
+.panel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  box-shadow: inset 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
+  background-color: rgb(3, 20, 175);
+}
+/* DICE FACES */
+.face-front{
+  transform: rotateY(0deg) translateZ(50px);
+}
+
+.face-bottom{
+  transform: rotateX(-90deg) translateZ(50px);
+}
+
+.face-right{
+  transform: rotateY( 90deg) translateZ(50px);
+}
+
+.face-left{
+  transform: rotateY(-90deg) translateZ(50px);
+}
+
+.face-top{
+  transform: rotateX( 90deg) translateZ(50px);
+}
+
+.face-back{
+  transform: rotateY(180deg) translateZ(50px);
+}
+
+/* DICE SPINNING */
+
+.dice.is-spinning {
+  animation: spinCube 1s 1 linear;
+}
+
+/* DICE SCORE */
+
+.dice.is-one {
+  animation: spinOne 1s 1 linear;
+  transform: translateZ(-100px) rotateY(0deg);
+}
+
+.dice.is-two {
+  animation: spinTwo 1s 1 linear;
+  transform: translateZ(-100px) rotateX(90deg);
+}
+
+.dice.is-three {
+  animation: spinThree 1s 1 linear;
+  transform: translateZ(-100px) rotateY(-90deg);
+}
+
+.dice.is-four {
+  animation: spinFour 1s 1 linear;
+  transform: translateZ(-100px) rotateY(90deg);
+}
+
+.dice.is-five {
+  animation: spinFive 1s 1 linear;
+  transform: translateZ(-100px) rotateX(-90deg);
+}
+
+.dice.is-six {
+  animation: spinSix 1s 1 linear;
+  transform: translateZ(-100px) rotateY(-180deg);
+}
+
+@keyframes spinCube {
+  0% { transform: translateZ(-50px) rotateX(  0deg) rotateY(  0deg); }
+100% { transform: translateZ(-50px) rotateX(360deg) rotateY(360deg); }
+}
+
+@keyframes spinOne {
+  0% { transform: translateZ(-50px) rotateX(  0deg) rotateY(  0deg); }
+100% { transform: translateZ(-50px) rotateX(360deg) rotateY(360deg); }
+}
+
+@keyframes spinTwo {
+  0% { transform: translateZ(-50px) rotateX(  0deg) rotateY(  0deg); }
+  100% { transform: translateZ(-50px) rotateX(-270deg) rotateY(360deg); }
+}
+
+@keyframes spinThree {
+  0% { transform: translateZ(-50px) rotateX(  0deg) rotateY(  0deg); }
+  100% { transform: translateZ(-50px) rotateX(360deg) rotateY(270deg); }
+}
+
+@keyframes spinFour {
+  0% { transform: translateZ(-50px) rotateX(  0deg) rotateY(  0deg); }
+  100% { transform: translateZ(-50px) rotateX(180deg) rotateY(270deg); }
+}
+
+@keyframes spinFive {
+  0% { transform: translateZ(-50px) rotateX(  0deg) rotateY(  0deg); }
+  100% { transform: translateZ(-50px) rotateX(270deg) rotateY(90deg); }
+}
+
+@keyframes spinSix {
+  0% { transform: translateZ(-50px) rotateX(  0deg) rotateY(  0deg); }
+  100% { transform: translateZ(-50px) rotateX(360deg) rotateY(180deg); }
+}
+
+.dice.iso-a {
+  transform: translateZ(-100px) rotateX(-25deg) rotateY(35deg);
+}
+
+.dice.iso-b {
+  transform: translateZ(-100px) rotateX(25deg) rotateY(30deg) rotateZ(180deg);
+}
+
+/* DOTS SPECIFICATION */
+
+.dot{
+  width: var(--dotSize);
+  height: var(--dotSize);
+  border-radius: var(--dotSize);
+  background-color: #f74d4a;
+  box-shadow: inset 2px 2px #970019;
+}
+
+.side-one.dot-one,
+.side-three.dot-two,
+.side-five.dot.dot-three {
+  position: absolute;
+  top: var(--dotVerticalCenter);
+  left: var(--dotHorizontalCenter);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.side-two.dot.dot-one,
+.side-four.dot.dot-one,
+.side-five.dot.dot-one,
+.side-six.dot.dot-one {
+  position: absolute;
+  top: var(--dotVerticalTop);
+  left: var(--dotHorizontalLeft);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.side-two.dot.dot-two,
+.side-four.dot.dot-four,
+.side-five.dot.dot-five,
+.side-six.dot.dot-six {
+  position: absolute;
+  top: 75%;
+  left: 75%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.side-three.dot-one,
+.side-four.dot.dot-two,
+.side-five.dot.dot-two,
+.side-six.dot.dot-three {
+  position: absolute;
+  top: 75%;
+  left: 25%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.side-three.dot-three,
+.side-four.dot.dot-three,
+.side-five.dot.dot-four,
+.side-six.dot.dot-four {
+  position: absolute;
+  top: 25%;
+  left: 75%;
+  transform: translateX(-50%) translateY(-50%); 
+}
+
+.side-six.dot.dot-two {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translateX(-50%) translateY(-50%); 
+}
+
+.side-six.dot.dot-five {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translateX(-50%) translateY(-50%); 
+}
+
+.container .container-bottom {
+  display: flex;
+  justify-content: space-evenly;
+  /* border: 1px solid red; */
+  padding-top: 20px;
+}
+
+.btn {
+  box-shadow:inset 0px 0px 15px 3px #234e99;
+	background-color:#27539e;
+	border-radius:17px;
+	border:1px solid #1f2f47;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+  font-weight: 500;
+  font-size: 25px;
+  padding:10px 50px;
+	text-shadow:0px 1px 0px #263666;
+}
+
+.btn:hover {
+	background-color:#295fca;
+}
+.btn:active {
+	position:relative;
+	top:2px;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice game</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="container-top">
+            <div class="game-text">
+                <h1 class="game-title">Dice game</h1>
+                <h2 class="game-info" id="message">Roll dice to start!</h2>
+                <div class="game-players">
+                    <div class="player1">
+                        <p class="player name">Player 1: <span id="player1Name">Adam</span></p>
+                        <p class="player score">Score: <span id="player1Score">0</span></p>
+                        <p class="player score">Log: <span id="player1ScoreHistory"></span></p>
+                    </div>
+                    <div class="player2">
+                        <p class="player name">Player 2: <span id="player2Name">Ewa</span></p>
+                        <p class="player score">Score: <span id="player2Score">0</span></p>
+                        <p class="player score">Log: <span id="player2ScoreHistory"></span></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="container-middle">
+            <div class="wrapper left">
+              <div class="scene">
+                <div id="dice1" class="dice iso-a">
+                  <div class="panel face-front">
+                    <div class="side-one dot dot-one"></div>
+                  </div>
+                  <div class="panel face-bottom">
+                    <div class="side-two dot dot-one"></div>
+                    <div class="side-two dot dot-two"></div>
+                  </div>
+                  <div class="panel face-right">
+                    <div class="side-three dot dot-one"></div>
+                    <div class="side-three dot dot-two"></div>
+                    <div class="side-three dot dot-three"></div>
+                  </div>
+                  <div class="panel face-left">
+                    <div class="side-four dot dot-one"></div>
+                    <div class="side-four dot dot-two"></div>
+                    <div class="side-four dot dot-three"></div>
+                    <div class="side-four dot dot-four"></div>
+                  </div>
+                  <div class="panel face-top">
+                    <div class="side-five dot dot-one"></div>
+                    <div class="side-five dot dot-two"></div>
+                    <div class="side-five dot dot-three"></div>
+                    <div class="side-five dot dot-four"></div>
+                    <div class="side-five dot dot-five"></div>
+                  </div>
+                  <div class="panel face-back">
+                    <div class="side-six dot dot-one"></div>
+                    <div class="side-six dot dot-two"></div>
+                    <div class="side-six dot dot-three"></div>
+                    <div class="side-six dot dot-four"></div>
+                    <div class="side-six dot dot-five"></div>
+                    <div class="side-six dot dot-six"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="wrapper right">
+              <div class="scene">
+                <div id="dice2" class="dice iso-b">
+                  <div class="panel face-front">
+                    <div class="side-one dot dot-one"></div>
+                  </div>
+                  <div class="panel face-bottom">
+                    <div class="side-two dot dot-one"></div>
+                    <div class="side-two dot dot-two"></div>
+                  </div>
+                  <div class="panel face-right">
+                    <div class="side-three dot dot-one"></div>
+                    <div class="side-three dot dot-two"></div>
+                    <div class="side-three dot dot-three"></div>
+                  </div>
+                  <div class="panel face-left">
+                    <div class="side-four dot dot-one"></div>
+                    <div class="side-four dot dot-two"></div>
+                    <div class="side-four dot dot-three"></div>
+                    <div class="side-four dot dot-four"></div>
+                  </div>
+                  <div class="panel face-top">
+                    <div class="side-five dot dot-one"></div>
+                    <div class="side-five dot dot-two"></div>
+                    <div class="side-five dot dot-three"></div>
+                    <div class="side-five dot dot-four"></div>
+                    <div class="side-five dot dot-five"></div>
+                  </div>
+                  <div class="panel face-back">
+                    <div class="side-six dot dot-one"></div>
+                    <div class="side-six dot dot-two"></div>
+                    <div class="side-six dot dot-three"></div>
+                    <div class="side-six dot dot-four"></div>
+                    <div class="side-six dot dot-five"></div>
+                    <div class="side-six dot dot-six"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    
+        <div class="container-bottom">
+          <button class="btn dice-btn" id="rollDice">Dice!</button>
+        </div>
+    
+    </div>
+    <script src="index.js"></script>
+    
+</body>
+</html>
